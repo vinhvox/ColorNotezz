@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="175dp"
+    android:layout_marginTop="@dimen/_10sdp"
     android:background="@color/colorAccent">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleview"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:src="@drawable/logo"/>
+    <TextView
+        android:text="NOTE COLOR"
+        android:fontFamily="@font/abc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_25sdp"
+        android:layout_margin="@dimen/_20sdp"
+        android:textColor="#E4D01E"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        />
+
+</LinearLayout>

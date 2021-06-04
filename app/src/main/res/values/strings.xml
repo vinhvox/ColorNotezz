@@ -18,4 +18,19 @@
     <string name="Setting">Setting</string>
     <string name="PasswordSetting">Password entered again\nRemove all password protected note</string>
     <string name="ReminderSetting">Reminder Setting</string>
+    <string name="note">Note</string>
+    <string name="calendar">Calendar</string>
+    <string name="archive">Archive</string>
+    <string name="trashcan">Trash Can</string>
+    <string name="setting">Setting</string>
+    <string name="share">Share</string>
+    <string name="rate">Rate</string>
+    <string name="feedback">FeedBack</string>
+    <string name="information">Information</string>
+    <string name="noidung">Nội Dung</string>
+    <string name="noteapp">NOTE COLOR</string>
+    <string name="Author">Author</string>
+    <string name="PrivacyPolicy">PrivacyPolicy</string>
+    <string name="Email">Email</string>
+
 </resources>

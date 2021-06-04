@@ -95,6 +95,7 @@ public class CalendarView extends AppCompatActivity {
     }
 
     private void addEvents() {
+        // lỗi không hiển thị note ngày hôm nay
         calendarView.setOnDayClickListener(new OnDayClickListener() {
             @Override
             public void onDayClick(@NotNull EventDay eventDay) {

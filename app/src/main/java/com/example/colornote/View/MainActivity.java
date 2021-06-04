@@ -266,7 +266,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent.putExtra("title", title);
                 intent.putExtra("content", mess);
                 pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                alarmManager.setExact(AlarmManager.RTC_WAKEUP, date.getTime(), pendingIntent);
+                if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.O) {
+                    alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP,date.getTime(),pendingIntent);
+                }
+                else alarmManager.setExact(AlarmManager.RTC_WAKEUP, date.getTime(), pendingIntent);
 
             }
         } catch (ParseException e) {
@@ -382,6 +385,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent3 = new Intent(this, CalendarView.class);
                 startActivity(intent3);
                 break;
+            case R.id.nav_GGCalendar:
+                Intent intent5 = new Intent(this, GoogleCalendar.class);
+                startActivity(intent5);
+                break;
             case R.id.nav_Note:
                 if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
                     drawerLayout.closeDrawer(GravityCompat.START);
@@ -405,6 +412,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_Rate:
                 String url = "https://play.google.com/store/apps/details?id=com.socialnmobile.dictapps.notepad.color.note";
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                break;
+            case R.id.nav_FeedBack:
+                String url1 = "https://play.google.com/store/apps/details?id=com.socialnmobile.dictapps.notepad.color.note";
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url1)));
                 break;
             case R.id.nav_Share:
                 Intent shareIntent = new Intent(Intent.ACTION_SEND);

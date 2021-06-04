@@ -103,6 +103,7 @@ public class DataBinding {
                     jsonObject.put("color", content.getColor());
                     title.add(jsonObject.toString());
                 }
+                // fix lỗi save list check
                 if (list.get(i) instanceof ListCheck) {
                     ListCheck listCheck = (ListCheck) list.get(i);
                     jsonObject.put("list", "home");
@@ -202,13 +203,12 @@ public class DataBinding {
                 }
             }
             try {
-                File file1 = null;
                 File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/ColorNote");
                 if (!file.exists()) {
                     file.mkdirs();
                 }
-                file1 = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/ColorNote", NAME_FILE);
-                FileWriter fw = new FileWriter(file1);
+                File cFile = new File(file,NAME_FILE);
+                FileWriter fw = new FileWriter(cFile);
                 BufferedWriter bw = new BufferedWriter(fw);
                 for (int i = 0; i < title.size(); i++) {
                     bw.write(title.get(i) + "\n");
