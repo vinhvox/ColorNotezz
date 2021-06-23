@@ -28,6 +28,8 @@ import com.example.colornote.Service.AlarmReceiver;
 import com.example.colornote.ViewModel.DataBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -81,7 +83,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     String mode = "Dark";
     NotificationManager manager;
     final int REQUEST_CODE = 1;
-
+    private FirebaseAuth mAuth;
+    FirebaseUser currentUser;
     public MainActivity() throws IOException, JSONException {
     }
 
@@ -147,6 +150,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mAuth = FirebaseAuth.getInstance();
+         currentUser = mAuth.getCurrentUser();
+
         setContentView(R.layout.activity_main);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -321,6 +327,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navView.setNavigationItemSelectedListener(this);
+        if (currentUser == null){
+            navView.getMenu().findItem(R.id.nav_GGCalendar).setVisible(false);
+        }
     }
 
     public void onBackPressed() {
@@ -351,6 +360,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_home, menu);
+
         return true;
     }
 

@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="q">
-        <activity android:name=".View.GoogleCalendar"></activity>
+        <activity android:name=".ScreenLogin"></activity>
+        <activity android:name=".View.GoogleCalendar" />
         <activity android:name=".View.WebView" />
         <activity android:name=".View.TrashCanView" />
         <activity android:name=".View.SearchView" />

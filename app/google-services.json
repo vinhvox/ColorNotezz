@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "142930770187",
+    "project_id": "colornote-83e99",
+    "storage_bucket": "colornote-83e99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142930770187:android:be3df47244e4f6feac4a0e",
+        "android_client_info": {
+          "package_name": "com.example.colornote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142930770187-v919ohgn3ej33jbrkd2dunn0og351mub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWMZr2aaxqfPiRZa2mRwAfsTehVC7F9hw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142930770187-v919ohgn3ej33jbrkd2dunn0og351mub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

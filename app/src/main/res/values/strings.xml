@@ -32,5 +32,6 @@
     <string name="Author">Author</string>
     <string name="PrivacyPolicy">PrivacyPolicy</string>
     <string name="Email">Email</string>
+    <string name="login">Login</string>
 
 </resources>
